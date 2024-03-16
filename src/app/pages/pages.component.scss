@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  background: #024959;
+  width: 18rem;
+  height: 100vh;
+
+  .title-area {
+    background-color: #F2C12E;
+    height: 5rem;
+    width: 100%;
+
+    h1 {
+      font-size: 22px;
+    }
+  }
+
+  .sidebar-items {
+    li {
+      margin: 1.5rem 1.5rem auto 1.5rem;
+      background-color: #0c5f72;
+      height: 3rem;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      border-radius: 0.6rem;
+      color: #FFF;
+      scale: 0.97;
+    }
+
+    li:hover {
+      scale: 1;
+      transition: .2s;
+    }
+  }
+}

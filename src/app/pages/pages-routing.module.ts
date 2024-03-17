@@ -11,17 +11,17 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       {
-        path: 'registro-produto',
+        path: 'registro-regra-imposto',
+        component: TaxRuleRegistrationComponent
+      },
+      {
+        path: 'cadastro-produto',
         component: ProductRegistrationComponent
       },
       {
         path: 'relacao-produto',
         component: ProductRelationshipComponent
       },
-      {
-        path: 'registro-regra-imposto',
-        component: TaxRuleRegistrationComponent
-      }
     ]
   }
 ];

@@ -3,13 +3,25 @@
     <div class="title-area d-flex align-items-center justify-content-center">
       <h1>Sistema de Relatórios</h1>
     </div>
-    <ul class="sidebar-items">
-      <li>Cadastro de Regra de Imposto</li>
-      <li>Cadastro de Produto</li>
-      <li>Relação de Produto</li>
-    </ul>
+    <div class="items">
+      <div>
+        <ul class="sidebar-items">
+          <li [routerLink]="'/registro-regra-imposto'" (click)="updateName('Registro de regra de imposto')">Registro de Regra de Imposto</li>
+          <li [routerLink]="'/cadastro-produto'" (click)="updateName('Cadastro de produto')">Cadastro de Produto</li>
+          <li [routerLink]="'/relacao-produto'" (click)="updateName('Relação de produto')">Relação de Produto</li>
+        </ul>
+      </div>
+      <div class="btn-exit-area">
+        <button class="btn btn-exit" (click)="exit()">Sair</button>
+      </div>
+    </div>
   </div>
-  <div class="content col-md">
-    <router-outlet></router-outlet>
+  <div class="col-md">
+    <div class="title">
+      <h1 class="h1-title">{{ titlePage }}</h1>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

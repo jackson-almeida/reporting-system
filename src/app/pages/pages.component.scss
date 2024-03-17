@@ -17,6 +17,23 @@
       font-size: 22px;
     }
   }
+  
+  .items {
+    height: calc(100vh - 104px) !important;
+    display: grid;
+    align-content: space-between;
+    
+    .btn-exit-area {
+      padding: 1rem;
+
+      .btn-exit {
+        background: #FFF;
+        height: 3rem;
+        width: 100%;
+        font-weight: 500;
+      }
+    }
+  }
 
   .sidebar-items {
     li {
@@ -31,6 +48,7 @@
       border-radius: 0.6rem;
       color: #FFF;
       scale: 0.97;
+      cursor: pointer;
     }
 
     li:hover {
@@ -38,4 +56,18 @@
       transition: .2s;
     }
   }
+}
+
+.title {
+  background-color: #024959;
+  height: 5rem;
+
+  .h1-title {
+    padding: 1rem;
+    color: #FFF;
+  }
+}
+
+.content {
+  padding: 1.5rem 3rem;
 }

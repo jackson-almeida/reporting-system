@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { LoginService } from "./login.service";
 
 @Component({
   selector: 'login-component',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private service: LoginService,
   ) {
 
     this.loginForm = this.formBuilder.group({
@@ -23,7 +25,15 @@ export class LoginComponent implements OnInit {
   }
 
   handleClickLogin() {
-    this.router.navigate(['']);
+    this.service.create(this.loginForm.value).subscribe(
+      success => {
+        localStorage.clear();
+        console.log(Object.values(success))
+        //localStorage.setItem('Authorization', Object.values(success));
+        this.router.navigate(['']);
+      },
+      () => alert("Credenciais inválidas!"),
+    );
   }
 
   ngOnInit(): void {

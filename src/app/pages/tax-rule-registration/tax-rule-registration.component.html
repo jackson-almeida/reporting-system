@@ -1,20 +1,21 @@
-<div class="">
-  <form>
+<!-- <div class=""> -->
+  <form [formGroup]="taxRuleForm" (ngSubmit)="handleClickCreateTaxRule()">
     <div class="form-area">
       <div class="row">
         <div class="col field-form">
-          <input type="text" class="form-control" placeholder="Código">
+          <input type="text" class="form-control" formControlName="code"
+            placeholder="Código" #inputElement (blur)="onInputBlur()">
         </div>
         <div class="col field-form">
-          <input type="text" class="form-control" placeholder="Taxa %">
+          <input type="text" class="form-control" formControlName="rate" placeholder="Taxa %">
         </div>
       </div>
       <div class="row">
         <div class="col field-form">
-          <input type="text" class="form-control" placeholder="Nome">
+          <input type="text" class="form-control" formControlName="name" placeholder="Nome">
         </div>
       </div>
     </div>
-    <button class="btn btn-save">Gravar</button>
+    <button type="submit" class="btn btn-save">Gravar</button>
   </form>
-</div>
+<!-- </div> -->

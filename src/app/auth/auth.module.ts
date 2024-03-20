@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthComponent } from './auth.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [

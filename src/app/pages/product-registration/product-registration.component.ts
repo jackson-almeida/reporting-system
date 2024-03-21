@@ -47,7 +47,9 @@ export class ProductRegistrationComponent implements OnInit, AfterViewInit {
 
   handleClickCreateProduct() {
     this.service.create(this.productForm.value).subscribe(
-      () => alert('Produto adicioado com sucesso!'),
+      () => {
+        alert('Produto adicioado com sucesso!')
+      },
       () => alert('Falha ao adicionar produto!')
     );
     console.log(this.productForm.value)

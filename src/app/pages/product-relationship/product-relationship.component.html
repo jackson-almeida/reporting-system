@@ -1,26 +1,30 @@
 <div class="">
   <div class="d-flex justify-content-between">
-      <button class="btn btn-generate">Gerar relátorio</button>
-      <button class="btn btn-clear">Limpar</button>
+      <button class="btn btn-generate" (click)="generate()">Gerar relátorio</button>
+      <button class="btn btn-clear" (click)="clear()">Limpar</button>
   </div>
 
   <div class="my-4 mx-1 row">
-    <div class="col-md table-area">
+    <div *ngIf="productList.length == 0">
+      <h4 class="text-center">Não há dados para produtos para serem exibidos!</h4>  
+      <h6 class="text-center"><i>CLIQUE PARA GERAR UM RELATÓRIO!</i></h6>
+    </div>
+    <div class="col-md table-area" *ngIf="productList.length > 0">
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Código</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço de custo</th>
+            <th scope="col">Preço de venda</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+          <tr *ngFor="let product of productList">
+            <th scope="row">{{ product.code }}</th>
+            <td>{{ product.name }}</td>
+            <td>{{ product.custPrice }}</td>
+            <td>{{ product.custSale }}</td>
           </tr>
         </tbody>
       </table>

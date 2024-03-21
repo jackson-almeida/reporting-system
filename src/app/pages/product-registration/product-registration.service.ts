@@ -17,7 +17,6 @@ export class ProductRegitrationService {
   }
 
   getProductByCode(code: number) {
-    console.log(code)
     return this.http.get<ProductRegistration[]>(`${this.API}/${code}`);
   }
 

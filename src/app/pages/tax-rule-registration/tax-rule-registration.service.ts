@@ -20,7 +20,7 @@ export class TaxRuleRegitrationService {
     return this.http.get<TaxRuleRegistration[]>(`${this.API}/${code}`);
   }
 
-  create(taxRuleRegistration : any) {
+  create(taxRuleRegistration: any) {
     return this.http.post(this.API, taxRuleRegistration);
   }
 

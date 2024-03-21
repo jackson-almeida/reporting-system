@@ -28,8 +28,7 @@ export class LoginComponent implements OnInit {
     this.service.create(this.loginForm.value).subscribe(
       success => {
         localStorage.clear();
-        console.log(Object.values(success))
-        //localStorage.setItem('Authorization', Object.values(success));
+        localStorage.setItem('Authorization', Object.values(success)[0]);
         this.router.navigate(['']);
       },
       () => alert("Credenciais inválidas!"),

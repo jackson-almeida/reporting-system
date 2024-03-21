@@ -32,20 +32,20 @@ export class TaxRuleRegistrationComponent implements AfterViewInit {
         () => alert("Credenciais inválidas!"),
       );
     } else {
-      alert('Favor remover o código, código deve ser gerado pelo sistema!')
+      alert('Favor remover o código, código deve ser gerado pelo sistema!');
     }
   }
+  
   onInputBlur() {
-    console.log(this.inputElement.nativeElement.value)
     const code = this.inputElement.nativeElement.value;
 
-    this.service.getTaxRule(code).subscribe(
+    this.service.getTaxRuleByCode(code).subscribe(
       (success) => {
-        const firstResult = success[0]; // Se você está esperando apenas um resultado, caso contrário, você precisa ajustar este trecho
+        const result = Object(success);
         this.taxRuleForm.patchValue({
-          code: firstResult.code,
-          name: firstResult.name,
-          rate: firstResult.rate
+          code: result.code,
+          name: result.name,
+          rate: result.rate
         });
       },
       () => alert("Regra de importo não existe!"),

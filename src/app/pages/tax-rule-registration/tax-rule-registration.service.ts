@@ -8,8 +8,7 @@ import { TaxRuleRegistration } from './tax-rule-registration.interface';
 })
 export class TaxRuleRegitrationService {
 
-  //private readonly API = `${environment.backend}/user/login`;
-  private readonly API = `http://localhost:5097/api/taxrule`;
+  private readonly API = `${environment.backend}/taxrule`;
 
   constructor(private http: HttpClient) { }
 
@@ -17,13 +16,11 @@ export class TaxRuleRegitrationService {
     return this.http.get<TaxRuleRegistration[]>(this.API);
   }
 
-  getTaxRule(code: number) {
-    console.log(code)
+  getTaxRuleByCode(code: number) {
     return this.http.get<TaxRuleRegistration[]>(`${this.API}/${code}`);
   }
 
   create(taxRuleRegistration : any) {
-    console.log(taxRuleRegistration)
     return this.http.post(this.API, taxRuleRegistration);
   }
 

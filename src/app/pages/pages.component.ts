@@ -41,9 +41,5 @@ export class PagesComponent implements OnInit, DoCheck {
     this.router.navigate(['/auth/login'])
     localStorage.removeItem('Authorization')
   }
-
-  updateName = (name: string) => {
-    
-  };
   
 }

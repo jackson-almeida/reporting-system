@@ -14,7 +14,6 @@ export class AuthGuard implements CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log("Teteeeeeeeeeee")
     if (localStorage.getItem('Authorization')) {
       return true;
     }

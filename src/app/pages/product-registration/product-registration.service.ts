@@ -22,7 +22,11 @@ export class ProductRegitrationService {
 
   create(product: ProductRegistration) {
     delete product.code;
-    return this.http.post(this.API, product);
+
+    const response = this.http.post(this.API, product);
+
+    console.log(response)
+    return response;
   }
 
 }

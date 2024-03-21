@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { User } from './login.interface';
+import { UserRegister as User } from './register.interface';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class RegisterService {
 
-  private readonly API = `${environment.backend}/user/login`;
+  private readonly API = `${environment.backend}/user`;
 
   constructor(private http: HttpClient) { }
-
-  get() {
-    return this.http.get<User[]>(this.API);
-  }
 
   create(user : any) {
     return this.http.post(this.API, user);
